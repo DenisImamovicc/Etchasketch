@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+div.container {
+    height: 256px;
+    width: 256px;
+
+    border: solid;
+    float: left;
+    border-color: rgb(102, 82, 82);
+}
+
+
+
+div.square {
+    height: 16px;
+    width: 16px;
+
+    border: ;
+    float: left;
+    border-color: rgb(102, 82, 82);
+    background-color: white;
+}
+
+div.squareColored {
+    height: 16px;
+    width: 16px;
+
+    border: ;
+    float: left;
+    border-color: rgb(102, 82, 82);
+    background-color: black;
+
+}
