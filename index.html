@@ -7,43 +7,66 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="refreshButtonDiv">
+            <button class="refreshButton">Refresh</button>
+        </div>    
+        <div class="container"></div>
 
-
-
-        </div>
     </body>
 
     <script>
+
         const container = document.querySelector('.container');
         const square = document.createElement('div');
         square.classList.add('square');
 
         container.appendChild(square);
 
+        const Refresh = document.querySelector('.refreshButton');
 
+            function requestUserSquareAmount(){
+                let userSquareAmount=prompt("How many squares per side you want?" )**2;
+                alert(userSquareAmount);
+                
+                
+                massSquareProduction(userSquareAmount);
+                mathSquareWidth(userSquareAmount);
 
-            function massSquareProduction() {
-
-                for (i = 0; i < 255; i++) {
-                    const container = document.querySelector('.container');
-                    const square = document.createElement('div');
-                    square.classList.add('square');
-
-                     container.appendChild(square);                
-                     
-                }
-
-
- 
             }
 
-            square.addEventListener("mouseenter",function(){
-                square.classList.remove(".square");
-                square.classList.toggle(".squareColored");
-                console.log("colored")
-            });
 
-            massSquareProduction();
+
+            function massSquareProduction(userSquareAmount) {
+                for (i = 1; i < userSquareAmount; i++) {
+                        const container = document.querySelector('.container');
+                        const square = document.createElement('div');
+                        square.classList.add('square');
+                        container.appendChild(square);                
+                     
+                        square.addEventListener("mouseenter",function(){
+
+                            square.classList.add("squareColored");
+                            square.classList.remove("square");
+
+                            
+                        });
+
+
+                }
+                        square.addEventListener("mouseenter",function(){    
+                            //Eventlistener fixes a issue of of the square in the beginning not being able to be colored.
+
+                            square.classList.add("squareColored");
+                            square.classList.remove("square");
+                        });
+            }
+
+            function mathSquareWidth(userSquareAmount) {
+
+                let width= (1/userSquareAmount * 100)*2;
+                console.log(width);
+            }
+
+            requestUserSquareAmount();
     </script>
 </html>

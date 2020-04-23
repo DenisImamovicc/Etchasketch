@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -16,8 +18,8 @@ div.container {
 
 
 div.square {
-    height: 16px;
-    width: 16px;
+    height: ;
+    width: ;
 
     border: ;
     float: left;
@@ -26,8 +28,8 @@ div.square {
 }
 
 div.squareColored {
-    height: 16px;
-    width: 16px;
+    height: ;
+    width: ;
 
     border: ;
     float: left;
