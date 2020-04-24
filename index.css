@@ -18,20 +18,12 @@ div.container {
 
 
 div.square {
-    height: ;
-    width: ;
-
-    border: ;
     float: left;
     border-color: rgb(102, 82, 82);
     background-color: white;
 }
 
 div.squareColored {
-    height: ;
-    width: ;
-
-    border: ;
     float: left;
     border-color: rgb(102, 82, 82);
     background-color: black;
