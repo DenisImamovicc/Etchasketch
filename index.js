@@ -6,17 +6,18 @@ square.classList.add('square');
 container.appendChild(square);
 
 
+const Refresh = document.querySelector('.refreshButton');
+
+    Refresh.addEventListener("click",function() {
+        location.reload();
+
+
+    });
+
     function requestUserSquareAmount(){ 
-        const Refresh = document.querySelector('.refreshButton');
-            Refresh.addEventListener("click",function() {
                 let userSquareAmount=prompt("How many squares per side you want?" )**2;
                 alert(userSquareAmount);
-
                 massSquareProduction(userSquareAmount);
-
-
-            });
-    
 
         
         
@@ -35,7 +36,6 @@ container.appendChild(square);
 
                 square.classList.add('square');
                 container.appendChild(square);                
-                //mathSquareWidth(userSquareAmount);
 
                 square.addEventListener("mouseenter",function(){
 
@@ -51,6 +51,8 @@ container.appendChild(square);
             
                 
     }
+
+
 
     function mathSquareWidth(userSquareAmount) {
         let squareSize= (256/userSquareAmount)* Math.sqrt(userSquareAmount);
