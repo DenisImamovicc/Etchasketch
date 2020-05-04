@@ -12,6 +12,7 @@ div.container {
 
     border: solid;
     float: left;
+
     border-color: rgb(102, 82, 82);
 }
 
@@ -21,6 +22,8 @@ div.square {
     float: left;
     border-color: rgb(102, 82, 82);
     background-color: white;
+
+    display: block;
 }
 
 div.squareColored {

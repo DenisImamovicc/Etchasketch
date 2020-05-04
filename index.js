@@ -3,7 +3,6 @@ const container = document.querySelector('.container');
 const square = document.createElement('div');
 square.classList.add('square');
 
-container.appendChild(square);
 
 
     //Clears out the Trailmode choice and the squares in the container.
@@ -15,84 +14,124 @@ container.appendChild(square);
     });
 
  
-
+        let clickCount=0;
         let blackButton =document.querySelector(".blackButton");
+        
         //Prompts the amount of squares the user wants,when the user puts an valid
         //value the squares will be created and be painted w black color.
+
         blackButton.addEventListener("click",function() {
-            let userSquareAmount=prompt("How many squares per side you want?" )**2;
-            console.log(userSquareAmount)
+            console.log(clickCount);
+
+            clickCount++
+            console.log(clickCount);
+
+            if(clickCount==1){
+                let userSquareAmount=prompt("How many squares per side you want?" )**2;
+                console.log(userSquareAmount)
+
+                    
+                    if(isNaN(userSquareAmount) || userSquareAmount==0){
+                        
+                        console.log(userSquareAmount)
+                        alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
+                        console.log("if")
+                        clickCount=0;
+
+                    }
+                    else{
+                        let blackButton=true;
+                        let randomColorButton=false;
+                        let gradualBlackButton=false;
+
+                        console.log(userSquareAmount)
+                        alert(userSquareAmount);
+
+                        massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton);
+                        console.log("else")
+
+                    }
+            }
+            else{
+                alert("Need to refresh")
+            }
 
                 
-                if(isNaN(userSquareAmount) || userSquareAmount==0){
-                    
-                    console.log(userSquareAmount)
-                    alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
-                    console.log("if")
-
-                }
-                else{
-                    let blackButton=true;
-                    let randomColorButton=false;
-                    let gradualBlackButton=false;
-
-                    console.log(userSquareAmount)
-                    alert(userSquareAmount);
-
-                    massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton);
-                    console.log("else")
-
-                }
-
+            
         });
+        
 
         let randomColorButton =document.querySelector(".randomColorButton");
         randomColorButton.addEventListener("click",function() {
-            let userSquareAmount=prompt("How many squares per side you want?" )**2;
+            clickCount++
+            console.log(clickCount);
 
-            if(isNaN(userSquareAmount) || userSquareAmount==0){
-                    
+            if(clickCount==1){
+                let userSquareAmount=prompt("How many squares per side you want?" )**2;
                 console.log(userSquareAmount)
-                alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
-                console.log("if")
 
+                    
+                    if(isNaN(userSquareAmount) || userSquareAmount==0){
+                        
+                        console.log(userSquareAmount)
+                        alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
+                        console.log("if")
+                        clickCount=0;
+
+
+                    }
+                    else{
+                        let blackButton=false;
+                        let randomColorButton=true;
+                        let gradualBlackButton=false;
+
+                        console.log(userSquareAmount)
+                        alert(userSquareAmount);
+
+                        massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton);
+                        console.log("else")
+
+                    }
             }
             else{
-                let blackButton=false;
-                let randomColorButton=true;
-                let gradualBlackButton=false;
-
-                console.log(userSquareAmount)
-                alert(userSquareAmount);
-
-                massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton);
-                console.log("else")
-
+                alert("Need to refresh")
             }
         });
         
         let gradualBlackButton =document.querySelector(".gradualBlackButton");
         gradualBlackButton.addEventListener("click",function() {
-            let userSquareAmount=prompt("How many squares per side you want?" )**2;
+            clickCount++
+            console.log(clickCount);
 
-            if(isNaN(userSquareAmount) || userSquareAmount==0){
-                    
+            if(clickCount==1){
+                let userSquareAmount=prompt("How many squares per side you want?" )**2;
                 console.log(userSquareAmount)
-                alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
-                console.log("if")
 
+                    
+                    if(isNaN(userSquareAmount) || userSquareAmount==0){
+                        
+                        console.log(userSquareAmount)
+                        alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
+                        console.log("if")
+                        clickCount=0;
+
+
+                    }
+                    else{
+                        let blackButton=false;
+                        let randomColorButton=false;
+                        let gradualBlackButton=true;
+
+                        console.log(userSquareAmount)
+                        alert(userSquareAmount);
+
+                        massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton);
+                        console.log("else")
+
+                    }
             }
             else{
-                let blackButton=false;
-                let randomColorButton=false;
-                let gradualBlackButton=true;
-
-                console.log(userSquareAmount)
-                alert(userSquareAmount);
-
-                massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton);
-                console.log("else")
-
+                alert("Need to refresh")
             }
 
         });
@@ -104,16 +143,25 @@ container.appendChild(square);
 
         //Produces a certain amount of squares in the container 
         //dependent on the usersquareamount.
-    function massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton) {
+    function massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton,removeClutter) {
         for (i = 0; i < userSquareAmount; i++) {
                 let container = document.querySelector('.container');
                 let square = document.createElement('div');
+
+
+
+
                 
-                trailModeSelector(blackButton,randomColorButton,square,gradualBlackButton);
-                mathSquareWidth(userSquareAmount,square);
+
+
 
                 square.classList.add('square');
-                container.appendChild(square);     
+                container.appendChild(square);  
+                
+                trailModeSelector(blackButton,randomColorButton,square,gradualBlackButton,removeClutter);
+                mathSquareWidth(userSquareAmount,square);
+
+   
                 
         }
             
@@ -124,6 +172,8 @@ container.appendChild(square);
         //Black color mode
         if(blackButton==true && randomColorButton==false && gradualBlackButton==false){
             square.addEventListener("mouseenter",function(){
+
+                
 
                 square.classList.add("squareColored");
                 square.classList.remove("square");
@@ -188,4 +238,5 @@ container.appendChild(square);
 
 
     }
+    
 
