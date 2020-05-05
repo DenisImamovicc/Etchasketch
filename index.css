@@ -1,19 +1,50 @@
 
-
 * {
     margin: 0px;
     padding: 0px;
 }
+body {
+    background: url(file:///home/denis/the_odin_project/Etchasketch/overhead-view-notepad-scissors-pencils-wooden-plank_23-2147875648.jpg)lightblue;
 
+}
+
+div.buttonsAndContainer {
+    display: grid;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    position: relative;
+
+    top: 50px;
+
+
+}
+
+div.refreshButtonDiv {
+    display: block;
+    position: relative;
+
+    font-size: ;
+
+
+}
 
 div.container {
-    height: 256px;
-    width: 256px;
+    height: 350px;
+    width: 350px;
 
     border: solid;
-    float: left;
+    display: block;
+    position: relative;
 
-    border-color: rgb(102, 82, 82);
+    background-color: white;
+    
+
+
+
+
+
+    border-color: black;
 }
 
 
@@ -23,12 +54,14 @@ div.square {
     border-color: rgb(102, 82, 82);
     background-color: white;
 
-    display: block;
+
+
 }
 
 div.squareColored {
     float: left;
     border-color: rgb(102, 82, 82);
     background-color: black;
+
 
 }

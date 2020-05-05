@@ -1,19 +1,14 @@
 const container = document.querySelector('.container');
-
 const square = document.createElement('div');
 square.classList.add('square');
-
-
 
     //Clears out the Trailmode choice and the squares in the container.
     const Refresh = document.querySelector('.refreshButton');
     Refresh.addEventListener("click",function() {
         location.reload();
 
-
     });
 
- 
         let clickCount=0;
         let blackButton =document.querySelector(".blackButton");
         
@@ -30,7 +25,6 @@ square.classList.add('square');
                 let userSquareAmount=prompt("How many squares per side you want?" )**2;
                 console.log(userSquareAmount)
 
-                    
                     if(isNaN(userSquareAmount) || userSquareAmount==0){
                         
                         console.log(userSquareAmount)
@@ -56,11 +50,8 @@ square.classList.add('square');
                 alert("Need to refresh")
             }
 
-                
-            
         });
         
-
         let randomColorButton =document.querySelector(".randomColorButton");
         randomColorButton.addEventListener("click",function() {
             clickCount++
@@ -69,15 +60,13 @@ square.classList.add('square');
             if(clickCount==1){
                 let userSquareAmount=prompt("How many squares per side you want?" )**2;
                 console.log(userSquareAmount)
-
-                    
+                  
                     if(isNaN(userSquareAmount) || userSquareAmount==0){
                         
                         console.log(userSquareAmount)
                         alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
                         console.log("if")
                         clickCount=0;
-
 
                     }
                     else{
@@ -106,15 +95,13 @@ square.classList.add('square');
             if(clickCount==1){
                 let userSquareAmount=prompt("How many squares per side you want?" )**2;
                 console.log(userSquareAmount)
-
-                    
+                  
                     if(isNaN(userSquareAmount) || userSquareAmount==0){
                         
                         console.log(userSquareAmount)
                         alert(userSquareAmount+" "+"is not an acceptable input.Please try again.")
                         console.log("if")
                         clickCount=0;
-
 
                     }
                     else{
@@ -136,11 +123,6 @@ square.classList.add('square');
 
         });
 
-        
-        
-    
-
-
         //Produces a certain amount of squares in the container 
         //dependent on the usersquareamount.
     function massSquareProduction(userSquareAmount,blackButton,randomColorButton,gradualBlackButton,removeClutter) {
@@ -148,24 +130,14 @@ square.classList.add('square');
                 let container = document.querySelector('.container');
                 let square = document.createElement('div');
 
-
-
-
-                
-
-
-
                 square.classList.add('square');
                 container.appendChild(square);  
                 
                 trailModeSelector(blackButton,randomColorButton,square,gradualBlackButton,removeClutter);
                 mathSquareWidth(userSquareAmount,square);
-
-   
                 
         }
-            
-                
+                           
     }
     //Allows the user to only select one out of three trailmodes.
     function trailModeSelector(blackButton,randomColorButton,square,gradualBlackButton){
@@ -173,12 +145,8 @@ square.classList.add('square');
         if(blackButton==true && randomColorButton==false && gradualBlackButton==false){
             square.addEventListener("mouseenter",function(){
 
-                
-
                 square.classList.add("squareColored");
                 square.classList.remove("square");
-
-
                 
             });
             console.log("");
@@ -200,9 +168,7 @@ square.classList.add('square');
                 random_bg_color(); 
                 
                 square.classList.add("squareColored");
-                square.classList.remove("square");
-
-                
+                square.classList.remove("square");      
             });
             console.log("");
         }
@@ -210,8 +176,6 @@ square.classList.add('square');
 
             square.addEventListener("mouseenter",function(){
                 sketchySketch(square); 
-                    
-    
             });
         }
                         //Function to add 10% more black each mouseover
@@ -220,9 +184,7 @@ square.classList.add('square');
                             square.style.opacity = opacity += 0.1;
                             square.style.backgroundColor = '#000';
                             square.style.transition = 'background-color 0.25s';
-
-                        
-                    
+       
             console.log("");
         }
 
@@ -231,12 +193,9 @@ square.classList.add('square');
     //Calculates how long the individual sides of the square is going to be 
     //and putting the result in the squares width and height
     function mathSquareWidth(userSquareAmount,square) {
-        let squareSize= (256/userSquareAmount)* Math.sqrt(userSquareAmount);
+        let squareSize= (350/userSquareAmount)* Math.sqrt(userSquareAmount);
         square.style.width=squareSize;
         square.style.height=squareSize;
-        
-
-
     }
     
 
